@@ -12,9 +12,9 @@ public class Operator
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             while (true)
             {
-                System.out.println(robot.getPixelColor(screenSize.width/2,screenSize.height/2));
+                if (robot.getPixelColor(screenSize.width/2,screenSize.height/2).toString() == "java.awt.Color[r=0,g=255,b=0]"){
                 Thread.sleep(1000);
-                robot.keyPress(KeyEvent.VK_ENTER);
+                robot.keyPress(KeyEvent.VK_ENTER);}
             }
         }
         catch (Exception e)

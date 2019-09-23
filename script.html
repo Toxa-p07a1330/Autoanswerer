@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>SandBox</title>
+
+</head>
+<body>
+
+<script>
+
+
+    let num = document.body.getElementsByClassName("im-mess").length;
+    function refresh() {
+        function flush () {
+            function setColor(color) {
+                document.body.innerHTML = document.body.innerHTML + "<div style=\"position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; background-color: "+color+"\"></div>";
+            }
+            setColor("red");
+            setTimeout(setColor, 250, "white");
+
+        }
+        flush();
+
+    }
+    function chRefrssh()
+    {
+      if (num != document.body.getElementsByClassName("im-mess").length)
+      {
+          num = document.body.getElementsByClassName("im-mess").length;
+          document.getElementsByClassName("im_editable")[0].innerHTML  ="AutoAnswer";
+          refresh()
+      }
+    }
+    setInterval(chRefrssh, 500)
+
+</script>
+
+</body>
+</html>

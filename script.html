@@ -1,16 +1,19 @@
-   let num = document.body.getElementsByClassName("im-mess").length;
-    function refresh() {
-       
-    }
+  let num = document.body.getElementsByClassName("im-mess").length;
+
     function chRefrssh()
     {
-      if (num != document.body.getElementsByClassName("im-mess").length)
-      {
-          num = document.body.getElementsByClassName("im-mess").length;
-          document.getElementsByClassName("im_editable")[0].innerHTML  ="AutoAnswer";
-          document.getElementsByClassName("im-send-btn")[1].click();
-	      num++;
-          refresh()
-      }
+        if (num != document.body.getElementsByClassName("im-mess").length)
+        {
+            num = document.body.getElementsByClassName("im-mess").length;
+            document.getElementsByClassName("im_editable")[0].innerHTML  ="AutoAnswer";
+            document.getElementsByClassName("im-send-btn")[1].click();
+            num++;
+
+        }
     }
-    setInterval(chRefrssh, 500)
+    ​
+    function chUnread()
+    {
+        document.getElementsByClassName("nim-dialog--unread")[0].click();
+    }
+    setInterval(()=>{chRefrssh(); chUnread()}, 500);
